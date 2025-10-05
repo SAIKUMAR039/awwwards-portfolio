@@ -5,7 +5,7 @@ export const projects = [
     description:
       "An elegant AI-powered e-commerce platform for fashion design, offering seamless product browsing, smart recommendations, and smooth checkout experience.",
     href: "",
-    
+    image: "/assets/projects/vynika-reddy.png",1
     bgImage: "/assets/projects/vynika-reddy.png",
     frameworks: [
       { id: 1, name: "React" },
