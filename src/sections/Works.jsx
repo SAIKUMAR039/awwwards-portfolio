@@ -5,6 +5,19 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
+// simple gradient selector for preview cards
+const getGradient = (index) => {
+  const gradients = [
+    "linear-gradient(135deg,#0ea5a4 0%,#065f46 100%)",
+    "linear-gradient(135deg,#7c3aed 0%,#4c1d95 100%)",
+    "linear-gradient(135deg,#f97316 0%,#b45309 100%)",
+    "linear-gradient(135deg,#06b6d4 0%,#0e7490 100%)",
+    "linear-gradient(135deg,#ef4444 0%,#b91c1c 100%)",
+    "linear-gradient(135deg,#f59e0b 0%,#7c2d12 100%)",
+  ];
+  return gradients[index % gradients.length];
+};
+
 const Works = () => {
   const overlayRefs = useRef([]);
   const previewRef = useRef(null);
@@ -108,15 +121,12 @@ const Works = () => {
         textColor={"text-black"}
         withScrollTrigger={true}
       />
-      <div
-        className="relative flex flex-col font-light"
-        onMouseMove={handleMouseMove}
-      >
+      <div className="relative flex flex-col font-light" onMouseMove={handleMouseMove}>
         {projects.map((project, index) => (
           <div
             key={project.id}
             id="project"
-            className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
+            className="relative flex flex-col gap-1 py-6 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
@@ -128,52 +138,63 @@ const Works = () => {
               className="absolute inset-0 hidden md:block duration-200 bg-black -z-10 clip-path"
             />
 
-            {/* title */}
-            <div className="flex justify-between px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
-              <h2 className="lg:text-[32px] text-[26px] leading-none">
-                {project.name}
-              </h2>
-              <Icon icon="lucide:arrow-up-right" className="md:size-6 size-5" />
+            {/* title + meta */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between px-6 md:px-10 transition-all duration-500">
+              <div>
+                <h2 className="lg:text-[32px] text-[26px] leading-none text-black md:group-hover:text-white">
+                  {project.name}
+                </h2>
+                <p className="mt-2 text-xs md:text-sm text-black/60 md:group-hover:text-white/60 max-w-2xl">
+                  {project.description}
+                </p>
+              </div>
+              <Icon icon="lucide:arrow-up-right" className="md:size-6 size-5 mt-4 md:mt-0 text-black md:group-hover:text-white" />
             </div>
+
             {/* divider */}
-            <div className="w-full h-0.5 bg-black/80" />
-            {/* framework */}
-            <div className="flex px-10 text-xs leading-loose uppercase transtion-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12">
+            <div className="w-full h-px bg-black/80 my-4" />
+
+            {/* framework chips */}
+            <div className="flex flex-wrap gap-3 px-6 md:px-10">
               {project.frameworks.map((framework) => (
-                <p
+                <span
                   key={framework.id}
-                  className="text-black transition-colors duration-500 md:group-hover:text-white"
+                  className="text-xs md:text-sm uppercase tracking-wider px-3 py-1 bg-black/5 rounded-full text-black md:group-hover:text-white"
                 >
                   {framework.name}
-                </p>
+                </span>
               ))}
             </div>
-            {/* mobile preview image */}
-            <div className="relative flex items-center justify-center px-10 md:hidden h-[400px]">
-              <img
-                src={project.bgImage}
-                alt={`${project.name}-bg-image`}
-                className="object-cover w-full h-full rounded-md brightness-50"
-              />
-              <img
-                src={project.image}
-                alt={`${project.name}-image`}
-                className="absolute bg-center px-14 rounded-xl"
-              />
+
+            {/* mobile preview card (no images) */}
+            <div className="md:hidden px-6 mt-6">
+              <div className="w-full h-64 rounded-md overflow-hidden shadow-lg" style={{ background: getGradient(index) }}>
+                <div className="w-full h-full flex flex-col justify-end p-6 text-white bg-gradient-to-t from-black/40">
+                  <h3 className="text-xl font-semibold">{project.name}</h3>
+                  <p className="text-sm mt-2 line-clamp-3">{project.description}</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}
-        {/* desktop Flaoting preview image */}
+
+        {/* desktop floating preview (no images) */}
         <div
           ref={previewRef}
-          className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[960px] md:block hidden opacity-0"
+          className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[520px] md:block hidden opacity-0 rounded-md"
         >
           {currentIndex !== null && (
-            <img
-              src={projects[currentIndex].image}
-              alt="preview"
-              className="object-cover w-full h-full"
-            />
+            <div className="w-full h-full flex items-end" style={{ background: getGradient(currentIndex) }}>
+              <div className="w-full p-8 text-white bg-gradient-to-t from-black/40">
+                <h3 className="text-2xl font-semibold">{projects[currentIndex].name}</h3>
+                <p className="mt-2 text-sm line-clamp-4">{projects[currentIndex].description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {projects[currentIndex].frameworks.map((f) => (
+                    <span key={f.id} className="text-xs px-2 py-1 bg-white/10 rounded">{f.name}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
           )}
         </div>
       </div>
