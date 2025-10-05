@@ -5,9 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 const Services = () => {
-  const text = `I build secure, high-performance full-stack apps
-    with smooth UX to drive growth 
-    not headaches.`;
+  const text = `Our comprehensive suite of services is designed to elevate your brand and drive growth. From innovative web design and development to strategic digital marketing and AI-powered solutions, we provide end-to-end support to help your business thrive in the digital age.`;
   const serviceRefs = useRef([]);
   const isDesktop = useMediaQuery({ minWidth: "48rem" }); //768px
   useGSAP(() => {

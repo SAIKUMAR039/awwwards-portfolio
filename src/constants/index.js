@@ -1,181 +1,138 @@
-// index.js
-export const servicesData = [
-  {
-    title: "FullStack Development",
-    description:
-      "Your business deserves a fast, secure, and future-proof digital foundation. I develop custom web apps with clean architecture, optimized databases, and seamless integrations—ensuring reliability at every layer.",
-    items: [
-      {
-        title: "Backend Engineering",
-        description: "(REST/GraphQL APIs, Microservices, Auth Systems)",
-      },
-      {
-        title: "Frontend Excellence",
-        description: "(React, Vue, TypeScript, Interactive UI/UX)",
-      },
-      {
-        title: "Database Design",
-        description: "(SQL/NoSQL Optimization, Scalable Structures)",
-      },
-    ],
-  },
-  {
-    title: "DevOps & Cloud Solutions",
-    description:
-      "Deploying software shouldn't be a gamble. I automate infrastructure, enforce security, and leverage cloud platforms (AWS/Azure) to keep your app running smoothly—24/7, at any scale.",
-    items: [
-      {
-        title: "CI/CD Pipelines",
-        description: "(GitHub Actions, Docker, Kubernetes)",
-      },
-      {
-        title: "Server Management ",
-        description: "(Linux, Nginx, Load Balancing)",
-      },
-      {
-        title: "Performance Tuning",
-        description: "(Caching, Compression, Lighthouse 90+ Scores)",
-      },
-    ],
-  },
-  {
-    title: "Security & Optimization",
-    description:
-      "Slow or hacked apps destroy trust. I harden security (XSS/SQLI protection, OAuth) and optimize bottlenecks so your app stays fast, safe, and scalable as you grow.",
-    items: [
-      {
-        title: "Code Audits",
-        description: "(Refactoring, Tech Debt Cleanup)",
-      },
-      {
-        title: "Pen Testing",
-        description: "(Vulnerability Assessments)",
-      },
-      {
-        title: "SEO Tech Stack",
-        description: "(SSR, Metadata, Structured Data)",
-      },
-    ],
-  },
-  {
-    title: "Web & Mobile Apps",
-    description:
-      "A clunky interface can sink even the best ideas. I craft responsive, pixel perfect web and mobile apps (React Native/Flutter) that users love—bridging design and functionality seamlessly.",
-    items: [
-      {
-        title: "Cross-Platform Apps",
-        description: "(Single codebase for iOS/Android/Web)",
-      },
-      {
-        title: "PWAs",
-        description: "(Offline mode, Push Notifications)",
-      },
-      {
-        title: "E-Commerce",
-        description: "(Checkout flows, Payment Gateways, Inventory APIs)",
-      },
-    ],
-  },
-];
 export const projects = [
   {
     id: 1,
-    name: "Mobile Accessories E-commerce",
+    name: "Vynika Reddy Studio E-Commerce",
     description:
-      "An online store specializing in phone accessories including cases, chargers, cables, and power banks with MagSafe compatibility.",
+      "An elegant AI-powered e-commerce platform for fashion design, offering seamless product browsing, smart recommendations, and smooth checkout experience.",
     href: "",
-    image: "/assets/projects/mobile-accessories-store.jpg",
-    bgImage: "/assets/backgrounds/blanket.jpg",
+    
+    bgImage: "/assets/projects/vynika-reddy.png",
     frameworks: [
       { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Node.js" },
-      { id: 4, name: "MongoDB" },
-      { id: 5, name: "Tailwind CSS" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "Tailwind CSS" },
+      { id: 4, name: "Firebase" },
     ],
   },
   {
     id: 2,
-    name: "Plant Shop E-commerce",
+    name: "Imagine - AI Image Generator",
     description:
-      "An online store specializing in rare and decorative plants with a clean, user-friendly interface.",
+      "An AI-powered web app allowing users to generate unique, high-quality images from text prompts using advanced AI models.",
     href: "",
-    image: "/assets/projects/plant-shop.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
+    image: "/assets/projects/imagine-ai.jpg",
+    bgImage: "/assets/backgrounds/abstract.jpg",
     frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Stripe API" },
-      { id: 4, name: "Tailwind CSS" },
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "Tailwind CSS" },
     ],
   },
   {
     id: 3,
-    name: "Apple Tech Marketplace",
+    name: "AI Resume Screening",
     description:
-      "An e-commerce platform for Apple products and accessories with deals and category filtering.",
+      "An intelligent resume screening system powered by AI to analyze and shortlist candidates based on role-specific requirements.",
     href: "",
-    image: "/assets/projects/apple-tech-store.jpg",
-    bgImage: "/assets/backgrounds/map.jpg",
+    image: "/assets/projects/ai-resume.jpg",
+    bgImage: "/assets/backgrounds/data.jpg",
     frameworks: [
-      { id: 1, name: "Blazor" },
-      { id: 2, name: "ASP.NET Core" },
-      { id: 3, name: "SQL Server" },
-      { id: 4, name: "Bootstrap" },
+      { id: 1, name: "React" },
+      { id: 2, name: "JavaScript" },
+      { id: 3, name: "Tailwind CSS" },
     ],
   },
   {
     id: 4,
-    name: "Electronics & Gadgets Store",
+    name: "File Share Web App",
     description:
-      "A multi-category online shop featuring electronics, home appliances, and gaming gear with special offers.",
+      "A secure and modern file-sharing platform enabling users to upload, manage, and share files with unique access links.",
     href: "",
-    image: "/assets/projects/electronics-store.jpg",
-    bgImage: "/assets/backgrounds/poster.jpg",
+    image: "/assets/projects/file-share.jpg",
+    bgImage: "/assets/backgrounds/cloud.jpg",
     frameworks: [
-      { id: 1, name: "Vue.js" },
-      { id: 2, name: "Laravel" },
-      { id: 3, name: "MySQL" },
-      { id: 4, name: "SCSS" },
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "TypeScript" },
+      { id: 3, name: "Tailwind CSS" },
     ],
   },
   {
     id: 5,
-    name: "Home Decor Marketplace",
+    name: "Haritha Infra Tech Website",
     description:
-      "A curated collection of designer home decor items, including furniture and artisan vases.",
+      "Developed a professional and informative website for Haritha Infra Tech to showcase infrastructure projects, services, and achievements.",
     href: "",
-    image: "/assets/projects/home-decor-store.jpg",
-    bgImage: "/assets/backgrounds/table.jpg",
+    image: "/assets/projects/haritha-infra.jpg",
+    bgImage: "/assets/backgrounds/blueprint.jpg",
     frameworks: [
-      { id: 1, name: "Angular" },
-      { id: 2, name: "Firebase" },
-      { id: 3, name: "GraphQL" },
-      { id: 4, name: "Material UI" },
+      { id: 1, name: "Next.js" },
+      { id: 2, name: "Tailwind CSS" },
+      { id: 3, name: "Firebase" },
     ],
   },
   {
     id: 6,
-    name: "Digital Game Store",
+    name: "Naidu Gari Kunda Biryani – Restaurant Branding",
     description:
-      "A gaming platform featuring discounted titles, top sellers, and genre-based browsing.",
+      "High-quality food photography and visual branding campaign that elevated restaurant visibility across social media platforms.",
     href: "",
-    image: "/assets/projects/game-store.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
+    image: "/assets/projects/naidugari-biryani.jpg",
+    bgImage: "/assets/backgrounds/restaurant.jpg",
     frameworks: [
-      { id: 1, name: "Svelte" },
-      { id: 2, name: "Node.js" },
-      { id: 3, name: "MongoDB" },
-      { id: 4, name: "Chakra UI" },
+      { id: 1, name: "Adobe Photoshop" },
+      { id: 2, name: "Lightroom" },
+      { id: 3, name: "After Effects" },
     ],
   },
 ];
+
 export const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/ali.sanatidev/reels/" },
+  { name: "Instagram", href: "https://www.instagram.com/skizen.solutions/" },
+  
+  { name: "Email", href: "mailto:ski.creativelab@gmail.com" },
+];
+
+// services data (first 4 only)
+export const servicesData = [
   {
-    name: "Youtube",
-    href: "https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA",
+    title: "Video Editing & Production",
+    description:
+      "Transform raw footage into compelling stories that engage and convert. We create visually stunning, emotionally resonant videos for marketing campaigns, brands, and businesses.",
+    items: [
+      { title: "Motion Graphics", description: "(Animated Branding & Explainers)" },
+      { title: "Color Grading", description: "(Professional Cinematic Finish)" },
+      { title: "Audio Enhancement", description: "(Noise Reduction & Sound Design)" },
+      { title: "Brand Integration", description: "(Seamless Logo & Theme Placement)" },
+    ],
   },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/ali-sanati/" },
-  { name: "GitHub", href: "https://github.com/Ali-Sanati" },
+  {
+    title: "Social Media Management",
+    description:
+      "Build your brand presence and engage effectively with your audience through data-driven social media strategies.",
+    items: [
+      { title: "Content Strategy", description: "(Plan, Create, and Schedule Posts)" },
+      { title: "Community Management", description: "(Engagement, DMs & Growth)" },
+      { title: "Analytics Reporting", description: "(Insights, Reach & Performance)" },
+    ],
+  },
+  {
+    title: "Targeted Ad Campaigns",
+    description:
+      "Reach your audience effectively with laser-focused advertising across top digital platforms. We handle every aspect from strategy to ROI analysis.",
+    items: [
+      { title: "Facebook Ads", description: "(Lead Generation, Retargeting)" },
+      { title: "Google Ads", description: "(Search, Display & Performance Max)" },
+      { title: "Instagram & LinkedIn", description: "(Brand Awareness & Conversion)" },
+    ],
+  },
+  {
+    title: "Website Development",
+    description:
+      "Modern, responsive, and high-performance websites designed to impress users and deliver measurable business results.",
+    items: [
+      { title: "Responsive Design", description: "(Perfect on All Devices)" },
+      { title: "E-commerce Solutions", description: "(Shopify, WooCommerce, Custom Builds)" },
+      { title: "SEO Optimization", description: "(Higher Ranking, Faster Load)" },
+    ],
+  },
 ];
